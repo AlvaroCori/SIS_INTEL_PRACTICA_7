@@ -1,46 +1,34 @@
 # SIS_INTEL_PRACTICA_7
+
+## Por:
+#### Alvaro Bryan Cori Sanchez
+#### Mauricio Balderrama Ali
+
 Neural networks for classification of stars
 
 
-#### Experiment 1 
-index_list = rand_index(stars.shape[0])
+#### Experiment 1
 
-x_train, y_train, x_test, y_test = select_variables(stars,index_list, 190)
-x_test
-model = Sequential()
+190 -> train
+ 10 -> test 
+
 model.add(Dense(10, input_dim=4, activation='relu'))
 model.add(Dense(6, activation='softmax'))
 model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accuracy'])
 
-y = []
-ls = []
+Epoch 900/900
+3/3 [==============================] - 0s 38ms/step - loss: 4.6404 - accuracy: 0.7421 - val_loss: 0.1054 - val_accuracy: 0.9000
 
-for i in y_train:
-    ls = [0 for i in range(6)]
-    ls[i] = 1
-    y.append(ls)
-y = pd.DataFrame(y)
-
-model.fit(x_train, y, epochs=1000)
-
-
-scores = model.evaluate(x_train, y)
- 
-    
-y_t = []
-ls = []
-for i in y_test:
-    ls = [0 for i in range(6)]
-    ls[i] = 1
-    y_t.append(ls)
-y_t = pd.DataFrame(y_t)
-
-print (model.predict(x_test).round())
-print (y_t)
+Cantidad total de pruebas: 10
+Cantidad total de aciertos: 9
+Porcentaje de aciertos: 90.0%
 
 
 #### Experiment 2
-x_train, y_train, x_test, y_test = select_variables(stars,index_list, 160)
+
+160 -> train
+ 40 -> test 
+ 
 model = Sequential()
 model.add(Dense(10, input_dim=4, activation='selu'))
 model.add(Dense(6, activation='softmax'))
@@ -49,17 +37,57 @@ model.compile(loss='categorical_crossentropy',optimizer='adam',metrics=['accurac
 Epoch 1000/1000
 5/5 [==============================] - 0s 5ms/step - loss: 0.2177 - accuracy: 0.9750
 
+Cantidad total de pruebas: 40
+Cantidad total de aciertos: 40
+Porcentaje de aciertos: 100.0%
+
 #### Experiment 3
 
-This experiment use 
-x_train, y_train, x_test, y_test = select_variables(stars_inputs,types,index_list, 160)
-model = Sequential()
+160 -> train
+ 40 -> test 
+
+
 model.add(Dense(10, input_dim=24, activation='selu'))
 model.add(Dense(6, activation='softmax'))
 model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
 
+
 Epoch 1482/1482
 3/3 [==============================] - 0s 31ms/step - loss: 1.6489 - accuracy: 0.9688 - val_loss: 0.0665 - val_accuracy: 1.0000
+
+
+#### Experiment 4
+
+160 -> train
+ 40 -> test 
+ 
+model.add(Dense(10, input_dim=24, activation='elu'))
+model.add(Dense(6, activation='softmax'))
+
+Cantidad total de pruebas: 40
+Cantidad total de aciertos: 40
+Porcentaje de aciertos: 100.00%
+
+Epoch 2000/2000
+3/3 [==============================] - 0s 29ms/step - loss: 1.4569 - accuracy: 0.9625 - val_loss: 2.1046 - val_accuracy: 0.9750
+
+#### Experiment 5
+
+160 -> train
+ 40 -> test 
+
+model.add(Dense(64, input_dim=24, activation='selu'))
+model.add(Dense(32, activation='relu'))
+model.add(Dense(6, activation='softmax'))
+model.compile(optimizer='adam',loss='categorical_crossentropy',metrics=['accuracy'])
+
+Cantidad total de pruebas: 40
+Cantidad total de aciertos: 39
+Porcentaje de aciertos: 97.5%
+
+Epoch 4000/4000
+3/3 [==============================] - 0s 17ms/step - loss: 0.6752 - accuracy: 0.9563 - val_loss: 3.7892 - val_accuracy: 0.9750
+
 
 ### Bibliografy
 #### Open a CSV

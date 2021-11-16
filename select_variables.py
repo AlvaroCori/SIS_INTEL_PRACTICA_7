@@ -22,11 +22,11 @@ def rand_index(limit):
     index_list = list(range(limit))
     random.shuffle(index_list)
     return index_list
-def select_variables(stars,types,index_list,number_train):
+def select_variables(stars,types,index_list,number_train,values = 6):
     #0:6
     #stars.iloc[filas: indices[0->number_rows_for_train] , columnas ]
-    x_train = stars.iloc[index_list[0:number_train],:]
-    x_test = stars.iloc[index_list[number_train:],:]
+    x_train = stars.iloc[index_list[0:number_train],0:values]
+    x_test = stars.iloc[index_list[number_train:],0:values]
     
     y_train = types.iloc[index_list[:number_train]]
     y_test =  types.iloc[index_list[number_train:]]
