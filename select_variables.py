@@ -22,7 +22,7 @@ def rand_index(limit):
     index_list = list(range(limit))
     random.shuffle(index_list)
     return index_list
-def select_variables(stars,types,index_list,number_train,values = 6):
+def select_variables(stars,types,index_list,number_train,values = 24):
     #0:6
     #stars.iloc[filas: indices[0->number_rows_for_train] , columnas ]
     x_train = stars.iloc[index_list[0:number_train],0:values]
@@ -81,6 +81,8 @@ def printv():
 def get_inputs(stars,colors, spectral_classes):
     return pd.concat([stars.iloc[:,0:4],convert_categoricals(stars,colors, spectral_classes)],axis=1)
 
+def get_best_inputs(stars):
+    return stars.iloc[:,1:4]
 
 def convert_at_type_array(mat):
     types = []
