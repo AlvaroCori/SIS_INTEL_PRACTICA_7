@@ -8,7 +8,7 @@
 
 #### Thick documentation is in Neuronal Network.
 #### The load of the neuronal network is in Neuronal Network Loaded and the test for the submittion of other csv file.
-#### The implementation of random forest is in Random Forest Experiment
+#### The implementation of random forest is in Random Forest Experiment.
 
 #### Experiment 1
 
