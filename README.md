@@ -4,8 +4,11 @@
 #### Alvaro Bryan Cori Sanchez
 #### Mauricio Balderrama Ali
 
-Neural networks for classification of stars
+#### Neural networks for classification of stars
 
+#### Thick documentation is in Neuronal Network.
+#### The load of the neuronal network is in Neuronal Network Loaded and the test for the submittion of other csv file.
+#### The implementation of random forest is in Random Forest Experiment
 
 #### Experiment 1
 
